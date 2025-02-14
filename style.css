@@ -1,0 +1,97 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    font-family: "Arial";
+}
+
+.head-container{
+    background-color: #ffcc00;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 380px 380px;
+    grid-template-areas:
+    "logo play-button"
+    "now-playing play-button";
+    /* justify-items: stretch;
+    align-items: stretch; */
+}
+
+.head-container .logo{
+    grid-area: logo;
+    padding: 20px;
+}
+
+.head-container .now-playing{
+    grid-area: now-playing;
+    align-self: end;
+    padding: 20px;
+    font-weight: 300;
+    font-size: 16px;
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 20px;
+    line-height: 20px;
+    line-height: 2rem;
+}
+
+.head-container .play-button{
+    grid-area: play-button;
+}
+
+.head-container .play-button img{
+    min-width: 0%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.head-container .now-playing .text-nowplaying{
+    font-size: small;
+}
+
+.head-container .now-playing .text-artist{
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.row2{
+    background-color: #660099;
+    min-width: 0%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.row3{
+    background-color: #ffcc00;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 300px 450px 450px;
+    grid-template-areas:
+    "howto pallino"
+    "howto lista"
+    "strano lista";
+}
+
+.row3 .howto{
+    grid-area: howto;
+    background-color: blue;
+    font-size: 15vw;
+}
+
+.row3 .pallino{
+    grid-area: pallino;
+    background-color: black;
+}
+
+.row3 .strano{
+    grid-area: strano;
+    background-color: red;
+}
+
+.row3 .lista{
+    grid-area: lista;
+    background-color: cyan;
+}
+
+/* .head-container .now-playing .text-song{
+    
+} */
