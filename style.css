@@ -4,11 +4,15 @@ body{
     font-family: "Arial";
 }
 
+img {
+	vertical-align: middle;
+}
+
 .head-container{
     background-color: #ffcc00;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 380px 380px;
+    grid-template-rows: auto auto;
     grid-template-areas:
     "logo play-button"
     "now-playing play-button";
@@ -16,9 +20,10 @@ body{
     align-items: stretch; */
 }
 
-.head-container .logo{
+.head-container #logo{
     grid-area: logo;
     padding: 20px;
+    max-width: 90%;
 }
 
 .head-container .now-playing{
@@ -36,9 +41,11 @@ body{
 
 .head-container .play-button{
     grid-area: play-button;
+	padding: 20px;
+    max-width: 90%;
 }
 
-.head-container .play-button img{
+.head-container .play-button #play{
     min-width: 0%;
     max-width: 100%;
     max-height: 100%;
@@ -60,38 +67,226 @@ body{
     max-height: 100%;
 }
 
-.row3{
+.row2 #row2{
+	width: calc(100% + 4rem);
+	margin: 0 -2rem;
+}
+
+.howto{
     background-color: #ffcc00;
+	/* display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-right: -20px;
+	margin-left: -20px; */
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 300px 450px 450px;
+    grid-template-rows: auto auto;
     grid-template-areas:
-    "howto pallino"
-    "howto lista"
-    "strano lista";
+    	"howto-text dot"
+    	"j-img fm-cities";
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	padding: 20px;
+	overflow: visible;
+	position: relative;
 }
 
-.row3 .howto{
-    grid-area: howto;
-    background-color: blue;
+.howto .howto-text{
+    grid-area: howto-text;
     font-size: 15vw;
+	letter-spacing: -5%;
+	line-height: 99%;
+	align-self: start;
+	font-weight: bolder;
 }
 
-.row3 .pallino{
-    grid-area: pallino;
-    background-color: black;
+.howto .j-img{
+    grid-area: j-img;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	position: relative;
+	top: -30%;
 }
 
-.row3 .strano{
-    grid-area: strano;
-    background-color: red;
+.howto .j-img #j-img{
+	height: auto;
+	max-width: 50%;
 }
 
-.row3 .lista{
-    grid-area: lista;
-    background-color: cyan;
+.howto .dot {
+	grid-area: dot;
+	width: 11.5vw;
+    height: 11.5vw;
+    border-radius: 20vw;
+    background: #000000;
+    margin-left: auto;
+	margin-top: 15px;
+	margin-right: 20px;
+	align-self: start;
 }
 
+.howto .fm-cities{
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+    grid-area: fm-cities;
+	text-align: justify;
+	font-size: large;
+
+}
+
+.howto .fm-cities #text-1fm {
+	padding-bottom: 2%;
+	border-bottom: black solid 1px;
+}
+
+.howto .fm-cities #no_one {
+	padding-right: 10px;
+	font-size: xxx-large;
+}
+
+.howto .fm-cities #FMFM {
+	font-size: 500%;
+}
+
+.howto .fm-cities .cities-text{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	padding-top: 8%;
+	padding-bottom: 8%;
+	border-bottom: black solid 1px;
+}
+
+.online-url{
+	background-color: #ffcc00;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+	"websites-list a-img";
+	justify-content: space-between;
+	align-items: center;
+}
+
+.online-url .websites-list{
+	grid-area: websites-list;
+}
+
+.online-url .a-img{
+	grid-area: a-img;
+	justify-self: end;
+	width: 100%;
+}
+
+.online-url .a-img #a-img{
+	max-width: 100%;
+	align-self: center;
+}
+
+.online-url .websites-list {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	padding-top: 8%;
+	padding-bottom: 8%;
+	border-bottom: black solid 1px;
+}
+  
+@media (min-width: 768px) {
+	.howto-text {
+		font-size: 10.36vw;
+		line-height: 12.5vw;
+	}
+	.head-container .play-button #play {
+		max-width: 100%;
+		width: 100%;
+		min-height: 50rem;
+		height: 100vh;
+	}
+	.howto .j-img #j-img{
+		/* justify-content: left;
+		align-items: center; */
+		position: relative;
+		max-width: clamp(50%, 60vw, 80%);
+		margin-top: clamp(-15%, -10vh, -12%);
+		/* max-width: 50%;
+		margin-top: -15%; */
+	}
+	.online-url .a-img #a-img{
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		max-width: clamp(80%, 60vw, 80%);
+		margin-top: clamp(0px, -10vh, -12%);
+	}
+}
+
+@media (max-width: 768px) {
+	.head-container{
+		background-color: #ffcc00;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto auto;
+		grid-template-areas:
+			"logo"
+			"play-button"
+			"now-playing";
+		/* justify-items: stretch;
+		align-items: stretch; */
+	}
+    .howto {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "howto-text"
+            "j-img"
+            "fm-cities";
+        text-align: left;
+    }
+	.howto .j-img #j-img{
+		justify-content: left;
+		align-items: center;
+		position: relative;
+		max-width: 50%;
+		margin-top: -5%;
+	}
+	.howto .dot {
+		display: none;
+	}
+	.howto .fm-cities #no_one {
+		padding-right: 5px;
+		font-size: xx-large;
+	}
+	.howto .fm-cities #FMFM {
+		font-size: 350%;
+	}
+
+	.online-url{
+		background-color: #ffcc00;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto;
+		grid-template-areas:
+		"a-img"
+		"websites-list";
+		justify-content: center;
+	}
+
+	.online-url .a-img{
+		justify-self: center;
+		width: 100%;
+	}
+    /* .howto .j-img #j-img {
+        justify-content: left;
+		position: relative;
+		grid-row: 2 / 4;
+		top: -32%;
+	} */
+}
 /* .head-container .now-playing .text-song{
     
 } */
