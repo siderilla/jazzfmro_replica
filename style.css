@@ -60,14 +60,14 @@ img {
     font-size: xx-large;
 }
 
-.row2{
+.il-row-1{
     background-color: #660099;
     min-width: 0%;
     max-width: 100%;
     max-height: 100%;
 }
 
-.row2 #row2{
+.il-row-1 #illu-1{
 	width: calc(100% + 4rem);
 	margin: 0 -2rem;
 }
@@ -135,7 +135,6 @@ img {
     grid-area: fm-cities;
 	text-align: justify;
 	font-size: large;
-
 }
 
 .howto .fm-cities #text-1fm {
@@ -187,15 +186,6 @@ img {
 	justify-self: end;
 }
 
-/* .online-url {
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
-	padding-top: 8%;
-	padding-bottom: 8%;
-	border-bottom: black solid 1px;
-} */
-
 .online-url .text-2online #no_two {
 	padding-right: 10px;
 	font-size: xx-large;
@@ -219,8 +209,8 @@ img {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-	padding-top: 6%;
-	padding-bottom: 6%;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	border-bottom: black solid 1px;
 }
 
@@ -264,20 +254,245 @@ img {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-	padding-top: 2%;
-	padding-bottom: 2%;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	border-bottom: black solid 1px;
 }
 
-.devices .z-img{
+.devices .z-img {
 	display: flex;
-	flex-direction: column;
-	width: 100%;
+	flex-direction: row;
+	width: 100vw;
 	height: auto;
 	max-width: 100%;
-	object-fit: cover;
-	padding-bottom: 20px;
+	/* object-fit: cover; */
 	justify-content: space-between;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+
+.devices .z-img #zeta {
+	max-width: 95%;
+	height: auto;
+	flex-grow: 1;
+	object-fit: cover;
+	padding: 2%;
+	justify-self: center;
+}
+
+.il-row-2{
+    background-color: #660099;
+    min-width: 0%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.il-row-2 #illu-2{
+	width: calc(100% + 4rem);
+	margin: 0 -2rem;
+}
+
+.title-schedule {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-template-rows: auto;
+	grid-template-areas:
+	"text-schedule dot";
+}
+
+.title-schedule .text-schedule {
+	grid-area: text-schedule;
+    font-size: 15vw;
+	letter-spacing: -5%;
+	line-height: 99%;
+	align-self: start;
+	font-weight: bolder;
+	padding-left: 15px;
+}
+
+.title-schedule .dot {
+	grid-area: dot;
+	width: 11.5vw;
+    height: 11.5vw;
+    border-radius: 20vw;
+    background: #000000;
+    margin-left: auto;
+	margin-top: 15px;
+	margin-right: 20px;
+	align-self: start;
+}
+
+.schedule-wrap {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: auto auto auto auto;
+	grid-template-areas:
+	". . mon"
+	"tue wed ."
+	". thu ."
+	". . fri"
+	"sat sun .";
+	gap: 10px;
+	padding: 20px;
+	margin: auto;
+}
+
+.schedule-wrap details[open] {
+    margin-bottom: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.schedule-wrap summary {
+    cursor: pointer;
+    list-style: none; /* Rimuove il triangolino predefinito */
+    padding: 10px;
+	border-bottom: 1px solid #ddd;
+	font-size: 450%;
+}
+
+.schedule-wrap .sched-list {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	border-bottom: 1px solid #ddd;
+}
+
+.schedule-wrap .sched-list  #time-table {
+	padding-right: 50px;
+}
+
+.schedule-wrap #mon {
+	grid-area: mon;
+}
+.schedule-wrap #tue {
+	grid-area: tue;
+}
+.schedule-wrap #wed {
+	grid-area: wed;
+}
+.schedule-wrap #thu {
+	grid-area: thu;
+}
+.schedule-wrap #fri {
+	grid-area: fri;
+}
+.schedule-wrap #sat {
+	grid-area: sat;
+}
+.schedule-wrap #sun {
+	grid-area: sun;
+}
+
+.sliding-text {
+	background-color: #ffcc00;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: auto;
+}
+
+.sliding-container {
+	border-bottom: black solid 1px;
+	overflow: hidden;
+	position: relative;
+}
+
+.sliding1, .sliding2, .sliding3 {
+	white-space: nowrap;
+	display: inline-block;
+	font-size: 10vw;
+}
+
+@keyframes slide-left {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes slide-right {
+	from {
+		transform: translateX(-100%);
+	}
+	to {
+		transform: translateX(100%);
+	}
+}
+
+.sliding-text .sliding1 {
+	animation: slide-left 20s linear infinite;
+}
+
+.sliding-text .sliding2 {
+	animation: slide-right 30s linear infinite;
+}
+
+.sliding-text .sliding3 {
+	animation: slide-left 30s linear infinite;
+}
+
+.sliding-text #keyboard {
+	width: 90%;
+	max-width: 1000px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10%;
+	align-self: center;
+}
+
+/* scroll container css esiste e andrebbe un po' cercato */
+
+.scroll-in-scroll {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto;
+	grid-template-areas:
+	"sheep-img event-list-container";
+	color: white;
+	background-color: #0099ff;
+	padding-left: 20px;
+	padding-right: 20px;
+	gap: 30px;
+}
+
+.scroll-in-scroll .event-list-container {
+	grid-area: event-list-container;
+	padding-bottom: 30px;
+}
+.scroll-in-scroll .sheep-img {
+	grid-area: sheep-img;
+	padding-top: 30px;
+	max-width: 30%;
+}
+
+.scroll-in-scroll .event-title {
+	font-size: 500%;
+	border-bottom: white solid 1px;
+}
+
+.scroll-in-scroll .event-loc {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	padding-top: 8%;
+	padding-bottom: 8%;
+	border-bottom: white solid 1px;
+}
+
+.il-row-3 {
+	background-color: #660099;
+	min-width: 0%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.il-row-3 #illu-3{
+	width: calc(100% + 4rem);
+	margin: 0 -2rem;
 }
 
 @media (min-width: 768px) {
@@ -307,18 +522,6 @@ img {
 		padding-left: 5%;
 		padding-right: 5%;
 	}
-}
-
-.row4{
-    background-color: #660099;
-    min-width: 0%;
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.row4 #row4{
-	width: calc(100% + 4rem);
-	margin: 0 -2rem;
 }
 
 @media (max-width: 768px) {
@@ -374,10 +577,112 @@ img {
 		justify-self: center;
 		width: 100%;
 	}
-    /* .howto .j-img #j-img {
-        justify-content: left;
+
+	.devices {
+		background-color: #ffcc00;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto;
+		grid-template-areas:
+			"z-img"
+			"dev-list";
+		justify-content: space-between;
+	}
+	
+	.devices .z-img #zeta {
+		max-width: 45%;
+		height: auto;
+		flex-grow: 1;
+		object-fit: cover;
+		padding: 2%;
+		justify-self: center;
+	}
+
+	.title-schedule {
+		padding-bottom: 50px;
+	}
+
+	.title-schedule .dot {
+		display: none;
+	}
+
+	.schedule-wrap {
+		display: block;
+		padding: 20px;
+		/* display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto auto auto auto auto auto;
+		grid-template-areas:
+		"mon"
+		"tue"
+		"wed"
+		"thu"
+		"fri"
+		"sat" 
+		"sun";
+		gap: 10px;
+		padding: 20px;
+		margin: auto; */
+		padding-bottom: 20px;
+	}
+	
+	.schedule-wrap details {
+		margin-bottom: 5px;
+		padding: 10px;
+		cursor: pointer;
+	}
+	
+	.schedule-wrap summary {
+		cursor: pointer;
+		list-style: none;
+		padding: 10px;
+		border-bottom: 1px solid #ddd;
+		font-size: 450%;
+		display: flex;
+		align-items: center;
+		gap: 10px;
 		position: relative;
-		grid-row: 2 / 4;
-		top: -32%;
-	} */
+	}
+
+	.schedule-wrap summary::after {
+		content: "+";
+		position: absolute;
+		right: 10px;
+	}
+
+	.schedule-wrap details[open] summary::after {
+		content: "-";
+	}
+	
+	.schedule-wrap .sched-list {
+		padding-top: 40px;
+		padding-bottom: 40px;
+		border-bottom: 1px solid #ddd;
+	}
+	
+	.schedule-wrap .sched-list  #time-table {
+		padding-right: 50px;
+	}
+	
+	.schedule-wrap #mon {
+		grid-area: mon;
+	}
+	.schedule-wrap #tue {
+		grid-area: tue;
+	}
+	.schedule-wrap #wed {
+		grid-area: wed;
+	}
+	.schedule-wrap #thu {
+		grid-area: thu;
+	}
+	.schedule-wrap #fri {
+		grid-area: fri;
+	}
+	.schedule-wrap #sat {
+		grid-area: sat;
+	}
+	.schedule-wrap #sun {
+		grid-area: sun;
+	}
 }
